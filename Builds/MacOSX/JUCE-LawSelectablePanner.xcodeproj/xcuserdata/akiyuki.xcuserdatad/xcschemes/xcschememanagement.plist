@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>JUCE-LawSelectablePanner (AU).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>JUCE-LawSelectablePanner (All).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>JUCE-LawSelectablePanner (Shared Code).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>JUCE-LawSelectablePanner (VST).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>JUCE-LawSelectablePanner (VST3).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3259E01BDDB71AA079C74B6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>44E855BE4D74CECAFD8B0529</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65CA8CFDEB5B54A363204E15</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71F0CC8863E935766C4C1475</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA6DDFBC34AA68D6964EF0AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
