@@ -10,8 +10,12 @@
               pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="JUCELawSelectablePannerAU"
               pluginRTASCategory="" aaxIdentifier="net.tkrworks.JUCELawSelectablePanner"
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="4.3.1"
-              companyName="tkrworks" companyEmail="info@tkrworks.net">
+              companyName="tkrworks" companyEmail="info@tkrworks.net" maxBinaryFileSize="20971520">
   <MAINGROUP id="BylfOd" name="JUCE-LawSelectablePanner">
+    <GROUP id="{D0A9A6E2-569F-B65D-DA1C-8FA34E594A68}" name="Image">
+      <FILE id="z4CbL1" name="Icon_AkiyukiOkayasu.png" compile="0" resource="1"
+            file="ImageFiles/Icon_AkiyukiOkayasu.png"/>
+    </GROUP>
     <GROUP id="{474AC0F6-AC20-91C2-9EB2-AAECD81CD526}" name="Source">
       <FILE id="u6DhE5" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>

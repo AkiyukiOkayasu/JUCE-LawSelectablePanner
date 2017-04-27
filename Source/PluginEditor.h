@@ -41,10 +41,11 @@ private:
     
     JucelawSelectablePannerAudioProcessor& processor;
     
-    ScopedPointer<Slider> panPod;
-    ScopedPointer<ComboBox> panAlgoCombo;
-    ScopedPointer<Label> panAlgoLabel;
-    ScopedPointer<Label> panAlgoDescriptionLabel;
+    ScopedPointer<Slider> panPod;//Pan調整用Slider
+    ScopedPointer<ComboBox> panAlgoCombo;//PanningLaw選択用ComboBox
+    ScopedPointer<Label> panAlgoDescriptionLabel;//PanningLaw計算式表示用Label
+    ScopedPointer<Label> signatureLabel;//署名用
+    Image icon;//アイコン画像
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JucelawSelectablePannerAudioProcessorEditor)
 };

@@ -16,8 +16,12 @@
 JucelawSelectablePannerAudioProcessorEditor::JucelawSelectablePannerAudioProcessorEditor (JucelawSelectablePannerAudioProcessor& p)
 : AudioProcessorEditor (&p), processor (p)
 {
+    //Panning Law選択用ComboBox
     addAndMakeVisible (panAlgoCombo = new ComboBox ("panAlgoComboBox"));
     panAlgoCombo->setEditableText (false);
+    panAlgoCombo->setColour(ComboBox::textColourId, Colours::black);
+    panAlgoCombo->setColour(ComboBox::arrowColourId, Colours::black);
+    panAlgoCombo->setColour(ComboBox::backgroundColourId, Colours::white);
     panAlgoCombo->setJustificationType (Justification::centred);
     panAlgoCombo->setTextWhenNothingSelected (String());
     panAlgoCombo->setTextWhenNoChoicesAvailable (String());
@@ -29,6 +33,7 @@ JucelawSelectablePannerAudioProcessorEditor::JucelawSelectablePannerAudioProcess
     panAlgoCombo->setSelectedItemIndex(static_cast<int>(processor.panAlgoList), NotificationType::dontSendNotification);
     panAlgoCombo->addListener (this);
     
+    //Pan調整用Slider
     addAndMakeVisible(panPod = new Slider(processor.panValue->name));
     panPod->setRange(processor.panValue->range.start, processor.panValue->range.end);
     panPod->setSliderStyle(Slider::RotaryVerticalDrag);
@@ -37,14 +42,26 @@ JucelawSelectablePannerAudioProcessorEditor::JucelawSelectablePannerAudioProcess
     panPod->setDoubleClickReturnValue(true, 0.5f);
     panPod->addListener(this);
     
-    addAndMakeVisible(panAlgoLabel = new Label);
-    panAlgoLabel->setJustificationType(Justification::centred);
-    panAlgoLabel->setText("Panning Algorithm", NotificationType::dontSendNotification);
-    
+    //PanningLaw計算式の表示用Label
     addAndMakeVisible(panAlgoDescriptionLabel = new Label);
+    panAlgoDescriptionLabel->setColour(Label::textColourId, Colours::black);
+    panAlgoDescriptionLabel->setColour(Label::backgroundColourId, /*Colour::fromRGB(19, 17, 30)*/Colours::white);
+    panAlgoDescriptionLabel->setFont(Font(11.0));
+    panAlgoDescriptionLabel->setJustificationType(Justification::topLeft);
     panAlgoDescriptionLabel->setText("-pi/4 <= Pan <= pi/4\nLch:(cos(Pan) - sin(Pan)) * sqrt(2) / 2\nRch:(cos(Pan) + sin(Pan)) * sqrt(2) / 2", NotificationType::dontSendNotification);
     
-    setSize(400, 300);
+    //署名用Label
+    addAndMakeVisible(signatureLabel = new Label);
+    signatureLabel->setColour(Label::textColourId, Colours::black);
+    signatureLabel->setColour(Label::backgroundColourId, Colours::white);
+    signatureLabel->setFont(Font(11.0));
+    signatureLabel->setJustificationType(Justification::bottomRight);
+    signatureLabel->setText("Akiyuki Okayasu", NotificationType::dontSendNotification);
+    
+    //アイコン画像
+    icon = ImageCache::getFromMemory(BinaryData::Icon_AkiyukiOkayasu_png, BinaryData::Icon_AkiyukiOkayasu_pngSize);
+    
+    setSize(300, 300);
     startTimerHz(60);
 }
 
@@ -55,7 +72,8 @@ JucelawSelectablePannerAudioProcessorEditor::~JucelawSelectablePannerAudioProces
 //==============================================================================
 void JucelawSelectablePannerAudioProcessorEditor::paint (Graphics& g)
 {
-    g.fillAll(Colours::white);
+    g.fillAll(Colour::fromRGB(28, 35, 45));
+    g.drawImageWithin(icon, getWidth() - icon.getWidth(), getHeight() - icon.getHeight(), icon.getWidth(), icon.getHeight(), RectanglePlacement::yTop, false);
 }
 
 void JucelawSelectablePannerAudioProcessorEditor::resized()
@@ -63,13 +81,13 @@ void JucelawSelectablePannerAudioProcessorEditor::resized()
     auto r = getLocalBounds();
     auto signatureBounds = r.removeFromBottom(100);
     auto iconBounds = signatureBounds.removeFromRight(100);
-    auto panAlgoDescriptionBounds = signatureBounds.removeFromTop(80);
+    auto panAlgoDescriptionBounds = signatureBounds.removeFromTop(85);
     auto panAlgoBounds = r.removeFromTop(25);
-    auto panAlgoLabelBounds = panAlgoBounds.removeFromLeft(160);
-    panPod->setBounds(r.reduced(6));
+    panPod->setBounds(r.reduced(10));
     panAlgoCombo->setBounds(panAlgoBounds);
-    panAlgoLabel->setBounds(panAlgoLabelBounds);
     panAlgoDescriptionLabel->setBounds(panAlgoDescriptionBounds);
+    signatureLabel->setBounds(signatureBounds);
+    
 }
 
 void JucelawSelectablePannerAudioProcessorEditor::sliderValueChanged (Slider* slider)
