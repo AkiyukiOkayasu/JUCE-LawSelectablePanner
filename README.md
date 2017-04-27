@@ -1,4 +1,5 @@
 # JUCE-LawSelectablePanner
+Panning law selectable stereo panner plug-in. This is built using JUCE library.
 
-# LICENCE
+# LICENSE
 GPL v3
