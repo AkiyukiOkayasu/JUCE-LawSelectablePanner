@@ -29,7 +29,7 @@ JucelawSelectablePannerAudioProcessor::JucelawSelectablePannerAudioProcessor()
                                                     "PanValue",
                                                     NormalisableRange<float>(0.0f, 1.0f),
                                                     0.5f));
-    smooth.setValue(0.5f);
+    smooth.setValue(0.5);
 }
 
 JucelawSelectablePannerAudioProcessor::~JucelawSelectablePannerAudioProcessor()
@@ -135,12 +135,11 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
     
     float** channelDataArray = buffer.getArrayOfWritePointers();
     const int bufSize= buffer.getNumSamples();
-    double Lgain;
-    double Rgain;
+    double currentPanValue = (double)*panValue;
     
-    if ((double)*panValue != lastPanValue)
+    if (fabs(currentPanValue - lastPanValue) > DBL_EPSILON)
     {
-        smooth.setValue(std::min(std::max(0.0, (double)*panValue), 1.0));
+        smooth.setValue(std::min(std::max(0.0, currentPanValue), 1.0));
     }
     
     for (int sample = 0; sample < bufSize; ++sample)
@@ -149,21 +148,26 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
         if (currentSmoothedPanValue < 0.0 || currentSmoothedPanValue > 1.0)
         {
             //LinearSmoothedValueでパンの動きを線形補間した際に、値が0.0~1.0の範囲外に行ってしまうことがある
-            //範囲外に行った時は直近の値を保持し、LinearSmoothedValue.setValue()に0.0か1.0を入れる。
-            currentSmoothedPanValue = lastSmoothedPanValue;
+            //範囲外に行った時は0.0もしくは1.0を代入し、LinearSmoothedValue.setValue()に0.0か1.0を入れる。
             if (currentSmoothedPanValue < 0.0)
+            {
+                currentSmoothedPanValue = 0.0;
                 smooth.setValue(0.0);
+            }
             if (currentSmoothedPanValue > 1.0)
+            {
+                currentSmoothedPanValue = 1.0;
                 smooth.setValue(1.0);
+            }
         }
-        jassert(0.0 <= currentSmoothedPanValue && currentSmoothedPanValue <= 1.0);
+        
         switch (panAlgoList)
         {
             case panningAlgorithm::ConstantPower://均等パワー
             {
-                double scaledCurrentPan = currentSmoothedPanValue * (double_Pi / 2.0) - double_Pi / 4.0;
-                Lgain = (cos(scaledCurrentPan) - sin(scaledCurrentPan)) * sqrt(2.0) / 2.0;
-                Rgain = (cos(scaledCurrentPan) + sin(scaledCurrentPan)) * sqrt(2.0) / 2.0;
+                const double scaledCurrentPan = currentSmoothedPanValue * (double_Pi / 2.0) - double_Pi / 4.0;
+                const double Lgain = (cos(scaledCurrentPan) - sin(scaledCurrentPan)) * sqrt(2.0) / 2.0;
+                const double Rgain = (cos(scaledCurrentPan) + sin(scaledCurrentPan)) * sqrt(2.0) / 2.0;
                 for (int channel = 0; channel < totalNumInputChannels; ++channel)
                 {
                     if (channel % 2 == 0)
@@ -181,8 +185,8 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
             }
             case panningAlgorithm::ConstantGain://均等ゲイン
             {
-                Lgain = 1.0 - currentSmoothedPanValue;
-                Rgain = currentSmoothedPanValue;
+                const double Lgain = 1.0 - currentSmoothedPanValue;
+                const double Rgain = currentSmoothedPanValue;
                 for (int channel = 0; channel < totalNumInputChannels; ++channel)
                 {
                     if (channel % 2 == 0)
@@ -200,9 +204,9 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
             }
             case panningAlgorithm::Log3://Log(-3dB)
             {
-                double logValue_amp = Decibels::decibelsToGain(-3.0);
-                Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
-                Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double logValue_amp = Decibels::decibelsToGain(-3.0);
+                const double Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
                 for (int channel = 0; channel < totalNumInputChannels; ++channel)
                 {
                     if (channel % 2 == 0)
@@ -220,9 +224,9 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
             }
             case panningAlgorithm::Log4_5://Log(-4.5dB)
             {
-                double logValue_amp = Decibels::decibelsToGain(-4.5);
-                Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
-                Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double logValue_amp = Decibels::decibelsToGain(-4.5);
+                const double Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
                 for (int channel = 0; channel < totalNumInputChannels; ++channel)
                 {
                     if (channel % 2 == 0)
@@ -240,9 +244,9 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
             }
             case panningAlgorithm::Log6://Log(-6dB)
             {
-                double logValue_amp = Decibels::decibelsToGain(-6.0);
-                Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
-                Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double logValue_amp = (double)Decibels::decibelsToGain(-6.0);
+                const double Lgain = pow(1.0 - currentSmoothedPanValue, log(logValue_amp)/log(0.5));
+                const double Rgain = pow(currentSmoothedPanValue, log(logValue_amp)/log(0.5));
                 for (int channel = 0; channel < totalNumInputChannels; ++channel)
                 {
                     if (channel % 2 == 0)
@@ -266,7 +270,7 @@ void JucelawSelectablePannerAudioProcessor::processBlock (AudioSampleBuffer& buf
         }
         lastSmoothedPanValue = currentSmoothedPanValue;
     }
-    lastPanValue = (double)*panValue;
+    lastPanValue = currentPanValue;
 }
 
 //==============================================================================

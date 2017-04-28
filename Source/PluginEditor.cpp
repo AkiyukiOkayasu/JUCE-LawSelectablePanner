@@ -45,7 +45,7 @@ JucelawSelectablePannerAudioProcessorEditor::JucelawSelectablePannerAudioProcess
     //PanningLaw計算式の表示用Label
     addAndMakeVisible(panAlgoDescriptionLabel = new Label);
     panAlgoDescriptionLabel->setColour(Label::textColourId, Colours::black);
-    panAlgoDescriptionLabel->setColour(Label::backgroundColourId, /*Colour::fromRGB(19, 17, 30)*/Colours::white);
+    panAlgoDescriptionLabel->setColour(Label::backgroundColourId, Colours::white);
     panAlgoDescriptionLabel->setFont(Font(11.0));
     panAlgoDescriptionLabel->setJustificationType(Justification::topLeft);
     panAlgoDescriptionLabel->setText("-pi/4 <= Pan <= pi/4\nLch:(cos(Pan) - sin(Pan)) * sqrt(2) / 2\nRch:(cos(Pan) + sin(Pan)) * sqrt(2) / 2", NotificationType::dontSendNotification);

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "44E855BE4D74CECAFD8B0529"
                BuildableName = "JUCE-LawSelectablePanner.vst"
-               BlueprintName = "JUCE-LawSelectablePanner (VST)"
+               BlueprintName = "JUCE-LawSelectablePanner - VST"
                ReferencedContainer = "container:JUCE-LawSelectablePanner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "44E855BE4D74CECAFD8B0529"
             BuildableName = "JUCE-LawSelectablePanner.vst"
-            BlueprintName = "JUCE-LawSelectablePanner (VST)"
+            BlueprintName = "JUCE-LawSelectablePanner - VST"
             ReferencedContainer = "container:JUCE-LawSelectablePanner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "44E855BE4D74CECAFD8B0529"
             BuildableName = "JUCE-LawSelectablePanner.vst"
-            BlueprintName = "JUCE-LawSelectablePanner (VST)"
+            BlueprintName = "JUCE-LawSelectablePanner - VST"
             ReferencedContainer = "container:JUCE-LawSelectablePanner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

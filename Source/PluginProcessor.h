@@ -69,7 +69,7 @@ public:
     panningAlgorithm panAlgoList = panningAlgorithm::ConstantPower;
     LinearSmoothedValue<double> smooth;
 private:
-    const double smoothingLengthInSeconds = 0.01;//10ms smoothing
+    const double smoothingLengthInSeconds = 0.01;//パン変更時にクリックノイズを鳴らさないためにパンの値に10msの線形補間をかける
     double lastPanValue = -1.0;
     double lastSmoothedPanValue = 0.5;
     //==============================================================================
