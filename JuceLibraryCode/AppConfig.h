@@ -289,10 +289,10 @@
  #define JucePlugin_Desc                   "JUCE-LawSelectablePanner"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "tkrworks"
+ #define JucePlugin_Manufacturer           "Akiyuki Okayasu"
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
- #define JucePlugin_ManufacturerWebsite    ""
+ #define JucePlugin_ManufacturerWebsite    "http://atelier.tkrworks.net/"
 #endif
 #ifndef  JucePlugin_ManufacturerEmail
  #define JucePlugin_ManufacturerEmail      "info@tkrworks.net"
@@ -391,5 +391,5 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "tkrworks: JUCE-LawSelectablePanner"
+ #define JucePlugin_IAAName                "Akiyuki Okayasu: JUCE-LawSelectablePanner"
 #endif

@@ -4,7 +4,7 @@
               version="1.0.0" bundleIdentifier="net.tkrworks.JUCELawSelectablePanner"
               includeBinaryInAppConfig="1" buildVST="1" buildVST3="1" buildAU="1"
               buildAUv3="0" buildRTAS="0" buildAAX="0" pluginName="JUCE-LawSelectablePanner"
-              pluginDesc="JUCE-LawSelectablePanner" pluginManufacturer="tkrworks"
+              pluginDesc="JUCE-LawSelectablePanner" pluginManufacturer="Akiyuki Okayasu"
               pluginManufacturerCode="Manu" pluginCode="J0x4" pluginChannelConfigs=""
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="JUCELawSelectablePannerAU"
@@ -12,7 +12,7 @@
               pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.0.0"
               companyName="tkrworks" companyEmail="info@tkrworks.net" maxBinaryFileSize="20971520"
               displaySplashScreen="1" reportAppUsage="1" splashScreenColour="Dark"
-              buildStandalone="0" enableIAA="0">
+              buildStandalone="0" enableIAA="0" companyWebsite="http://atelier.tkrworks.net/">
   <MAINGROUP id="BylfOd" name="JUCE-LawSelectablePanner">
     <GROUP id="{D0A9A6E2-569F-B65D-DA1C-8FA34E594A68}" name="Image">
       <FILE id="z4CbL1" name="Icon_AkiyukiOkayasu.png" compile="0" resource="1"

@@ -48,7 +48,7 @@ JucelawSelectablePannerAudioProcessorEditor::JucelawSelectablePannerAudioProcess
     panAlgoDescriptionLabel->setColour(Label::backgroundColourId, Colours::white);
     panAlgoDescriptionLabel->setFont(Font(11.0));
     panAlgoDescriptionLabel->setJustificationType(Justification::topLeft);
-    panAlgoDescriptionLabel->setText("-pi/4 <= Pan <= pi/4\nLch:(cos(Pan) - sin(Pan)) * sqrt(2) / 2\nRch:(cos(Pan) + sin(Pan)) * sqrt(2) / 2", NotificationType::dontSendNotification);
+    panAlgoDescriptionLabel->setText("-pi/4 <= pan <= pi/4\nLch:(cos(pan) - sin(pan)) * sqrt(2) / 2\nRch:(cos(pan) + sin(pan)) * sqrt(2) / 2", NotificationType::dontSendNotification);
     
     //署名用Label
     addAndMakeVisible(signatureLabel = new Label);
