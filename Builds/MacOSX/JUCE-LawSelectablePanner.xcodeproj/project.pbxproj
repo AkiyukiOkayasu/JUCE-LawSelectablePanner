@@ -236,6 +236,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst; }; name = Debug; };
 		E34DB8B2CE5CAA240A2C4FB3 = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -275,6 +276,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst; }; name = Release; };
 		B3E351AD5CE1F5ECBBBE98CF = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -313,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst3; }; name = Debug; };
 		10AC514C041A836EF7C6DD24 = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -352,6 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = vst3; }; name = Release; };
 		E59CDD6EE67BD340360CBE8F = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -391,6 +395,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Debug; };
 		FD708967FCC53C06C1801A21 = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -431,6 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
 				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO;
 				WRAPPER_EXTENSION = component; }; name = Release; };
 		AC3265BB5B7EE2DE3E2B518A = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
@@ -463,7 +469,8 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
-				SDKROOT_ppc = macosx10.5; }; name = Debug; };
+				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO; }; name = Debug; };
 		CEDAA853976F74C36AF6BD84 = {isa = XCBuildConfiguration; buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
@@ -496,7 +503,8 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.tkrworks.JUCELawSelectablePanner;
 				SDKROOT = macosx10.12;
-				SDKROOT_ppc = macosx10.5; }; name = Release; };
+				SDKROOT_ppc = macosx10.5;
+				USE_HEADERMAP = NO; }; name = Release; };
 		353DBE6A95867D2B44209E80 = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf";
