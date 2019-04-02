@@ -9,10 +9,11 @@
               pluginIsSynth="0" pluginWantsMidiIn="0" pluginProducesMidiOut="0"
               pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0" pluginAUExportPrefix="JUCELawSelectablePannerAU"
               pluginRTASCategory="" aaxIdentifier="net.tkrworks.JUCELawSelectablePanner"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.0.2"
-              companyName="tkrworks" companyEmail="info@tkrworks.net" maxBinaryFileSize="20971520"
+              pluginAAXCategory="2" jucerVersion="5.4.3" companyName="tkrworks"
+              companyEmail="info@tkrworks.net" maxBinaryFileSize="20971520"
               displaySplashScreen="1" reportAppUsage="1" splashScreenColour="Dark"
-              buildStandalone="0" enableIAA="0" companyWebsite="http://atelier.tkrworks.net/">
+              buildStandalone="0" enableIAA="0" companyWebsite="http://atelier.tkrworks.net/"
+              pluginFormats="buildVST,buildVST3,buildAU">
   <MAINGROUP id="BylfOd" name="JUCE-LawSelectablePanner">
     <GROUP id="{D0A9A6E2-569F-B65D-DA1C-8FA34E594A68}" name="Image">
       <FILE id="z4CbL1" name="Icon_AkiyukiOkayasu.png" compile="0" resource="1"
@@ -29,14 +30,12 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" vst3Folder="" keepCustomXcodeSchemes="1">
+    <XCODE_MAC targetFolder="Builds/MacOSX" keepCustomXcodeSchemes="1">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="JUCE-LawSelectablePanner"
-                       osxSDK="10.12 SDK" osxCompatibility="default" osxArchitecture="default"
-                       cppLanguageStandard="c++14" cppLibType="libc++"/>
+                       osxSDK="10.12 SDK" cppLanguageStandard="c++14" cppLibType="libc++"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="JUCE-LawSelectablePanner"
-                       cppLanguageStandard="c++14" cppLibType="libc++" osxSDK="10.12 SDK"
-                       osxCompatibility="default" osxArchitecture="default"/>
+                       cppLanguageStandard="c++14" cppLibType="libc++" osxSDK="10.12 SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_video" path="../../../Applications/JUCE/modules"/>
@@ -57,20 +56,21 @@
     </XCODE_MAC>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
   <LIVE_SETTINGS>
